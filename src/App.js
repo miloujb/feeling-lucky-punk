@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import ReactDOM from "react-dom";
 
-function App() {
+function GetDrink() {
+  const [name, setName] = useState();
+  const [volumeValue, setVolumeValue] = useState();
+  const [volumeUnit, setVolumeUnit] = useState();
+  useEffect(() => {
+    fetch("https://api.punkapi.com/v2/beers/random").then(results =>
+      results.json().then(data => {
+        setName(data[0].name);
+        const { volume } = data[0];
+        setVolumeValue(volume.value);
+        setVolumeUnit(volume.unit);
+      })
+    );
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Feeling Lucky, Punk?</h1>
+      <h2>{name}</h2>
+      <h3>
+        {volumeValue} {volumeUnit}
+      </h3>
     </div>
   );
 }
 
-export default App;
+ReactDOM.render(<GetDrink />, document.getElementById("root"));
+
+export default GetDrink;
