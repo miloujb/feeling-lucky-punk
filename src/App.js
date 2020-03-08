@@ -7,6 +7,8 @@ function GetDrink() {
   const [description, setDescription] = useState();
   const [abv, setABV] = useState();
   const [pairing, setPairings] = useState();
+  const [tips, setTips] = useState();
+  const [tagline, setTagline] = useState();
   useEffect(() => {
     fetch("https://api.punkapi.com/v2/beers/random").then(results =>
       results.json().then(data => {
@@ -23,6 +25,8 @@ function GetDrink() {
           })
         );
         setABV(data[0].abv);
+        setTips(data[0].brewers_tips);
+        setTagline(data[0].tagline);
       })
     );
   }, []);
@@ -32,9 +36,11 @@ function GetDrink() {
       <h2>
         {name} ({abv}%)
       </h2>
-      <img url={image_url} alt={name} />
-      <h3>{description}</h3>
-      <h4>This beer goes well with:{pairing}</h4>
+      <h3>{tagline}</h3>
+      <img src={image_url} alt={name} />
+      <h4>{description}</h4>
+      <p>Our brewers say: "{tips}"</p>
+      <p>This beer goes well with:{pairing}</p>
     </div>
   );
 }
