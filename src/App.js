@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
+import "../src/App.css";
 
 function GetDrink() {
   const [name, setName] = useState();
@@ -32,15 +33,15 @@ function GetDrink() {
   }, []);
   return (
     <div>
-      <h1>Feeling Lucky, Punk?</h1>
-      <h2>
+      <h1 className="title">Feeling Lucky, Punk?</h1>
+      <h2 className="name">
         {name} ({abv}%)
       </h2>
-      <h3>{tagline}</h3>
-      <img src={image_url} alt={name} />
-      <h4>{description}</h4>
-      <p>Our brewers say: "{tips}"</p>
-      <p>This beer goes well with:{pairing}</p>
+      <h3 className="tagline">{tagline}</h3>
+      <img className="image" src={image_url} alt={name} />
+      <h4 className="desc">{description}</h4>
+      <p className="brewers">Our brewers say: "{tips}"</p>
+      <p className="pairing">This beer goes well with:{pairing}</p>
     </div>
   );
 }

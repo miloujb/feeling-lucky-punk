@@ -7,6 +7,37 @@
   pointer-events: none;
 }
 
+.title {
+  text-align: center;
+}
+
+.name {
+  text-align: center;
+}
+
+.tagline {
+  text-align: center;
+}
+
+.desc {
+  text-align: center;
+}
+
+.image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.brewers {
+  text-align: center;
+}
+
+.pairing {
+  text-align: center;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
