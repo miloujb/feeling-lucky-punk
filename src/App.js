@@ -44,6 +44,14 @@ function GetDrink() {
       <h4 className="desc">{description}</h4>
       <p className="brewers">Our brewers say: "{tips}"</p>
       <p className="pairing">This beer goes well with:{pairing}</p>
+      <div className="button">
+        <input
+          type="button"
+          value="PICK YOUR POISON"
+          onClick="window.location.reload()"
+          className="button"
+        />
+      </div>
     </div>
   );
 }
