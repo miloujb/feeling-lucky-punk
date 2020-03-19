@@ -38,7 +38,9 @@ function GetDrink() {
         {name} ({abv}%)
       </h2>
       <h3 className="tagline">{tagline}</h3>
-      <img className="image" src={image_url} alt={name} />
+      <div className="image-container">
+        <img className="image" src={image_url} alt={name} />
+      </div>
       <h4 className="desc">{description}</h4>
       <p className="brewers">Our brewers say: "{tips}"</p>
       <p className="pairing">This beer goes well with:{pairing}</p>
