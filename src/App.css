@@ -29,6 +29,13 @@
   align-content: center;
 }
 
+.text-container {
+  align-items: center;
+  align-content: center;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
 .image {
   display: block;
   margin-left: auto;
@@ -41,8 +48,23 @@
   text-align: center;
 }
 
+.list {
+  text-align: center;
+}
+
 .pairing {
   text-align: center;
+}
+
+.pair {
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {

@@ -10,17 +10,22 @@ function GetDrink() {
   const [pairing, setPairings] = useState();
   const [tips, setTips] = useState();
   const [tagline, setTagline] = useState();
+
+  function reloadPage() {
+    window.location.reload(false);
+  }
+
   useEffect(() => {
-    fetch("https://api.punkapi.com/v2/beers/random").then(results =>
-      results.json().then(data => {
+    fetch("https://api.punkapi.com/v2/beers/random").then((results) =>
+      results.json().then((data) => {
         setName(data[0].name);
         setDescription(data[0].description);
         setImgURL(data[0].image_url);
         setPairings(
-          data[0].food_pairing.map(pairing => {
+          data[0].food_pairing.map((pairing) => {
             return (
-              <ul>
-                <li>{pairing}</li>
+              <ul className="list">
+                <li className="pair">{pairing}</li>
               </ul>
             );
           })
@@ -41,16 +46,13 @@ function GetDrink() {
       <div className="image-container">
         <img className="image" src={image_url} alt={name} />
       </div>
-      <h4 className="desc">{description}</h4>
-      <p className="brewers">Our brewers say: "{tips}"</p>
-      <p className="pairing">This beer goes well with:{pairing}</p>
-      <div className="button">
-        <input
-          type="button"
-          value="PICK YOUR POISON"
-          onClick="window.location.reload()"
-          className="button"
-        />
+      <div className="text-container">
+        <h4 className="desc">{description}</h4>
+        <p className="brewers">Our brewers say: "{tips}"</p>
+        <p className="pairing">This beer goes well with:{pairing}</p>
+        <div className="button">
+          <input type="button" value="Refresh" onClick={reloadPage} />
+        </div>
       </div>
     </div>
   );
