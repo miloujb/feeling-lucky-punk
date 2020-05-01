@@ -29,8 +29,6 @@
   min-height: 100%;
   min-width: 100%;
   height: auto;
-  width: 100%;
-  position: fixed;
   top: 0;
   left: 0;
   background-size: cover;
@@ -72,17 +70,18 @@
 
 .pairing {
   text-align: center;
+  list-style: inside;
 }
 
 .pair {
   text-align: center;
-  align-items: center;
-  align-content: center;
+  margin-right: 50px;
 }
 
 .button {
   display: flex;
   justify-content: center;
+  font-family: "Special Elite", cursive;
 }
 
 .footer {
