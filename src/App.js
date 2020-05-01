@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
+import {FaHeart} from 'react-icons/fa'
 import "../src/App.css";
 
 function GetDrink() {
@@ -37,7 +38,7 @@ function GetDrink() {
     );
   }, []);
   return (
-    <div>
+    <div className="background">
       <h1 className="title">Feeling Lucky, Punk?</h1>
       <h2 className="name">
         {name} ({abv}%)
@@ -54,6 +55,9 @@ function GetDrink() {
           <input type="button" value="Refresh" onClick={reloadPage} />
         </div>
       </div>
+     <div className="footer">
+  <p>Made with <FaHeart /> by Emily Bailey, May 2020</p>
+     </div>
     </div>
   );
 }
