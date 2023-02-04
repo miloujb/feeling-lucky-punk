@@ -8,11 +8,11 @@ This app is an experiment in React Hooks, and so was written in JavaScript, usin
 
 ## How can I see your project?
 
-If you would like to see this project in action, please click [here]([https://feeling-lucky-punk.herokuapp.com/](https://feeling-lucky-punk.herokuapp.com/)).
+If you would like to see this project in action, please click [here]([https://miloujb.github.io/feeling-lucky-punk/](https://feeling-lucky-punk.herokuapp.com/)).
 
 ## How can I install your project?
 
-To run this on your own machine, please download the repo, cd into the `punk` folder, and run `npm i`. One all dependencies have been downloaded, please run `npm start`.
+To run this on your own machine, please download the repo, and run `npm i`. One all dependencies have been downloaded, please run `npm start`.
 
 ## Acknowledgements
 
